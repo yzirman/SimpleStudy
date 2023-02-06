@@ -2,7 +2,8 @@ import sys
 import spacy
 nlp = spacy.load("en_core_web_sm")
 #get file name from user
-filename = input("what is the filename? please input the full path.\n")
+#filename = input("what is the filename? please input the full path.\n")
+filename = "/Users/yonizirman/Documents/GitHub/SimpleStudy/notes.txt"
 #read user input
 try:
     file = open(filename, "r")
@@ -23,6 +24,10 @@ else:
     #get answer from user
     #strip answer of spaces, capatilization, etc.
     #compare to known answer taken from user notes
-for line in file:
-    for token in line:
-        print(token.text, token.pos_, token.dep_)
+    #for line in file:
+        #print(line)
+        #for token in line:
+        #    print(token.text, token.pos_, token.dep_)
+    for str in file.split("."):
+        for token in str:
+            print(token.text, token.pos_, token.dep_)
